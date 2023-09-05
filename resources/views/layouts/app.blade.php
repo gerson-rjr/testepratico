@@ -31,6 +31,12 @@
                     </div>
                 </header>
             @endif
+            @if(Auth::user()->image)
+                <img class="image rounded-circle" 
+                src="{{asset('/storage/images/'.Auth::user()->image)}}" 
+                alt="imagem_do_perfil" 
+                style="width: 80px;height: 80px; padding: 10px; margin: 0px; ">
+            @endif
 
             <!-- Page Content -->
             <main>

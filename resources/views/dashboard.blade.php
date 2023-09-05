@@ -8,7 +8,12 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-welcome />
+                <form action="/home" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <label for="image">Adicione uma imagem ao perfil:</label>
+                    <input type="file" name="image" >
+                    <button type="submit">Salvar Imagem</button>
+                </form>
             </div>
         </div>
     </div>
