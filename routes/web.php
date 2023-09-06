@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ApiViaCepController;
+use App\Http\Controllers\CepController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +30,5 @@ Route::middleware([
     })->name('dashboard');
 });
 Route::post('home', [UserController::class,'upload']);
+Route::get('api/cep', [ApiViaCepController::class, '__invoke']);
+Route::post('cep', [CepController::class, 'store']);
